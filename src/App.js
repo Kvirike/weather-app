@@ -43,22 +43,26 @@ const handleChange = (event) => {
 
   return (
     <div className="App">
-      <form onSubmit={submitChange}>
-        <input
-          style={{border:"1px solid blue", borderRadius:"10px"}}
-          className='searchInp'
-          placeholder='Type in'
-          name='searchInput'
-          type='text'
-          value={inputVal}
-          onChange={handleChange}
-        >
-        </input>
-        <button
-          className='btn'
-          style={{backgroundColor:'#174bae', borderRadius:"35px", color:"white"}}
-        >Search</button>
-      </form>
+      <div className='header'>
+        <form
+          className="input-group mb-3" 
+          onSubmit={submitChange}>
+            <input
+            className="form-control input-lg input-search" 
+            placeholder='Type in'
+            name='searchInput'
+            type='text'
+            value={inputVal}
+            onChange={handleChange}
+            >
+            </input>
+            <button 
+              className="btn btn-primary" 
+              id="inputGroup-sizing-default"
+              >Search
+              </button>
+        </form>
+      </div>
       {
         srch.map((elem, key) => {
           return <Card elem={elem} key={key}/>
