@@ -1,11 +1,86 @@
 #root{
     width: 100vw;
-    height: 100vh;
-    background-color: #4B515D;
+    min-height: 120vh;
+    background-color: #a0bfe1
 }
 
 form{
     padding: 100px 300px 0 300px;
+}
+
+.bubbles img{
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+
+.bubbles{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: -70px;
+    background-color: #063970;
+}
+
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    70%{
+        opacity:1;
+    }
+    100%{
+        transform: translateY(-80vh);
+        opacity:0;
+    }
+}
+
+.bubbles img:nth-child(1){
+    animation-delay: 2s;
+    width: 28px;
+}
+.bubbles img:nth-child(2){
+    animation-delay: 1s;
+    width: 45px;
+}
+.bubbles img:nth-child(3){
+    animation-delay: 3s;
+    width: 35px;
+}
+.bubbles img:nth-child(4){
+    animation-delay: 4.5s;
+    width: 43px;
+}
+.bubbles img:nth-child(5){
+    animation-delay: 3s;
+    width: 25px;
+}
+.bubbles img:nth-child(6){
+    animation-delay: 6s;
+    width: 39px;
+}
+.card{
+    box-shadow: rgba(39, 73, 109) 0px 22px 70px 4px;    transition:1s ease;
+    transform: translateZ(0);
+}
+.card:hover{
+
+    box-shadow:
+    rgba(39, 73, 109) 0px 22px 70px 4px,
+    rgb(39, 73, 109) 0px 20px 30px -10px,
+    rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 @media (max-width: 1000px){

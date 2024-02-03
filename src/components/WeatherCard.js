@@ -19,9 +19,9 @@ function WeatherCard({location, current }) {
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <div className="flex-grow-1" style={{ fontSize: '1rem' }}>
-                                        <div><i className="fas fa-wind fa-fw" style={{ color: '#868B94' }}></i> <span className="ms-1">Time: {location.localtime}</span></div>
                                         <div><i className="fas fa-wind fa-fw" style={{ color: '#868B94' }}></i> <span className="ms-1">Wind: {current.wind_kph} km/h</span></div>
                                         <div><i className="fas fa-tint fa-fw" style={{ color: '#868B94' }}></i> <span className="ms-1">Humidity: {current.humidity}%</span></div>
+                                        <div><i className="fas fa-wind fa-fw" style={{ color: '#868B94' }}></i> <span className="ms-1">Time: {location.localtime}</span></div>
                                         <div><i className="fas fa-sun fa-fw" style={{ color: '#868B94' }}></i> <span className="ms-1"></span></div>
                                     </div>
                                     <div>

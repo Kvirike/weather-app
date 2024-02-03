@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherCard from './components/WeatherCard.js'
-
+import Bubbles from './components/Bubbles.js'
 
 
 
@@ -62,7 +62,7 @@ const handleChange = (event) => {
     return <WeatherCard location={location} current={current} key={key}/>
   })
 }
-
+  <Bubbles/>
     </div>
   );
 }
