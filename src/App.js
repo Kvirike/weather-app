@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import Card from './components/Card.js'
 import WeatherCard from './components/WeatherCard.js'
 
 
@@ -9,32 +8,24 @@ import WeatherCard from './components/WeatherCard.js'
 
 function App() {
 
-const[weather, updtWeather] = useState();
+const[weather, updtWeather] = useState([]);
 const[inputVal, updtInputVal] = useState('');
-const[srch, updSrch]= useState([])
 
 const BASE_URL = 'http://api.weatherapi.com/v1/current.json?'
 const keyOfUrl = '3fd8d32043454517a74101708242701'
 
 const submitChange = (event) => {
   event.preventDefault()
-  
-  updSrch((srch) => [inputVal, ...srch,]);
 
     async  function bringApi(city) {
        const data = await fetch(`${BASE_URL}key=${keyOfUrl}&q=${city}&aqi=no`)
        const result = await data.json()
-       updtWeather(result)
+       updtWeather([result])
        console.log(result);
        return result;
     }
      bringApi(inputVal)
 }
-
-
-
-
-
 
 const handleChange = (event) => {
   updtInputVal(event.target.value)
@@ -46,7 +37,9 @@ const handleChange = (event) => {
       <div className='header'>
         <form
           className="input-group mb-3" 
-          onSubmit={submitChange}>
+          onSubmit={submitChange}
+          
+          >
             <input
             className="form-control input-lg input-search" 
             placeholder='Type in'
@@ -64,13 +57,13 @@ const handleChange = (event) => {
         </form>
       </div>
       {
-        srch.map((elem, key) => {
-          return <Card elem={elem} key={key}/>
-        })
-      }
-      <WeatherCard/>
+  weather.map((elem, key) => {
+    const { location, current } = elem;
+    return <WeatherCard location={location} current={current} key={key}/>
+  })
+}
+
     </div>
-    
   );
 }
 
