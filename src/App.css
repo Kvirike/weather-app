@@ -20,7 +20,7 @@ form{
     align-items: center;
     position: absolute;
     bottom: -70px;
-    background-color: #063970;
+    background-color: #a0bfe1;
 }
 
 @keyframes bubble{
@@ -69,7 +69,6 @@ form{
     transform: translateZ(0);
 }
 .card:hover{
-
     box-shadow:
     rgba(39, 73, 109) 0px 22px 70px 4px,
     rgb(39, 73, 109) 0px 20px 30px -10px,
@@ -82,7 +81,6 @@ form{
     rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-
 @media (max-width: 1000px){
     form{
         padding: 100px 150px 0 150px;

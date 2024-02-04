@@ -1,9 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import { useEffect, useState } from 'react';
 
-function WeatherCard({location, current }) {
+function WeatherCard({location, current, isVisible }) {
+    const [opacity, setOpacity] = useState(0);
+
+    useEffect(() => {
+      setOpacity(1);
+    }, []);
+  
+    useEffect(() => {
+      setOpacity(isVisible ? 1 : 0);
+    }, [isVisible]);
+
 
     return (
-        <section>
+        <section style={{ opacity, transition: 'opacity 0.7s ease-in-out' }}>
             <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-md-8 col-lg-6 col-xl-4">
@@ -35,7 +46,6 @@ function WeatherCard({location, current }) {
             </div>
             
         </section>
-        
     );
 }
 export default WeatherCard
