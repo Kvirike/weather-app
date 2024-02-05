@@ -14,7 +14,7 @@ const[inputVal, updtInputVal] = useState('');
 const [isVisible, setIsVisible] = useState(false);
 const [errorMessage, setErrorMessage] = useState(null);
 
-const BASE_URL = 'http://api.weatherapi.com/v1/current.json?'
+const BASE_URL = 'https://api.weatherapi.com/v1/current.json?'
 const keyOfUrl = '3fd8d32043454517a74101708242701'
 var noScroll = require('no-scroll');
 
