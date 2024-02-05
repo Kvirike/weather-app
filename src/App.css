@@ -1,11 +1,32 @@
 #root{
     width: 100vw;
-    min-height: 120vh;
+    height: 100vh;
     background-color: #a0bfe1
 }
-
-form{
-    padding: 100px 300px 0 300px;
+.formDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:100px;
+    width: 100%;
+}
+.form{
+    display: flex;
+    align-items: center;
+}
+.inp{
+    width: 30vw;
+    height: 4.5vh;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #106cfc;
+}
+.btns{
+    width: 10vw;
+    height:4.5vh;
+    background-color: #106cfc;
+    border: none;
+    border-radius: 0 10px 10px 0;
 }
 
 .bubbles img{
@@ -65,7 +86,8 @@ form{
     width: 39px;
 }
 .card{
-    box-shadow: rgba(39, 73, 109) 0px 22px 70px 4px;    transition:1s ease;
+    box-shadow: rgba(39, 73, 109) 0px 22px 70px 4px;    
+    transition:1s ease;
     transform: translateZ(0);
 }
 .card:hover{
@@ -81,13 +103,60 @@ form{
     rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
+.headerDiv{
+    padding: 5px 10px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 7%;
+    height: 7%;
+}
+.errDiv{
+    text-align: center;
+    padding: 5px;
+}
 @media (max-width: 1000px){
-    form{
-        padding: 100px 150px 0 150px;
+    .logo{
+        width: 10%;
+        height: 10%;
     }
 }
 @media (max-width: 760px){
-    form{
-        padding: 100px 50px 0 50px;
+    .logo{
+        width: 13%;
+        height: 13%;
+    }
+    .inp{
+        width: 35vw;
+        height: 4vh;
+    }
+    .btns{
+        width: fit-content;
+        height:4vh ;
+    }
+}
+@media (max-width: 500px){
+    .logo{
+        width: 17%;
+        height: 17%;
+    }
+}
+@media (max-width:400px){
+    .inp{
+        width: 45vw;
+        height: 3vh;
+    }
+    .btns{
+        width: fit-content;
+        height:3vh ;
+    }
+}
+@media (max-width: 330px){
+    .logo{
+        width: 20%;
+        height: 20%;
     }
 }

@@ -15,7 +15,7 @@ function WeatherCard({location, current, isVisible }) {
 
     return (
         <section style={{ opacity, transition: 'opacity 0.7s ease-in-out' }}>
-            <div className="container py-5 h-100">
+            <div className="container py-2 h-100">
                 <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-md-8 col-lg-6 col-xl-4">
                         <div className="card" style={{ color: '#4B515D', borderRadius: '35px' }}>
