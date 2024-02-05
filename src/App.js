@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import {useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherCard from './components/WeatherCard.js'
@@ -20,6 +20,34 @@ var noScroll = require('no-scroll');
 
 noScroll.on();
 
+
+// using geolocation to get weather according to users location (first page/when loaded) 
+useEffect(() => {
+  const fetchWeatherByLocation = async () => {
+    try {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude, longitude } = position.coords;
+        const data = await fetch(`${BASE_URL}key=${keyOfUrl}&q=${latitude},${longitude}&aqi=no`);
+        
+        if (!data.ok) {
+          throw new Error(`Failed to fetch data. Status: ${data.status}`);
+        }
+
+        const result = await data.json();
+        updtWeather([result]);
+        setIsVisible(true);
+        setErrorMessage('');
+      });
+    } catch (error) {
+      setErrorMessage('Error fetching weather by location');
+    }
+  };
+
+  fetchWeatherByLocation();
+}, []);
+
+
+// function which provides API calls for the passed string in the input
 const submitChange = async (event) => {
   event.preventDefault();
 
@@ -46,8 +74,7 @@ const submitChange = async (event) => {
   }
 };
 
-
-
+// getting the value of input and updating variable accordingly
 const handleChange = (event) => {
   updtInputVal(event.target.value);
   setIsVisible(false);
