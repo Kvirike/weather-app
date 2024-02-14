@@ -1,1 +1,2 @@
-## [Live here](https://kvirike.github.io/weather-app)
+This project is made with react js. Bootstrap is used for the design and responsiveness is accomplished with css media query. As for the react I used useEffect and useState hooks. With this project one is able to search for the weather of cities/countries, as well as other meteorological information. Weather app is published on gh pages:
+ ## [Live here](https://kvirike.github.io/weather-app)
